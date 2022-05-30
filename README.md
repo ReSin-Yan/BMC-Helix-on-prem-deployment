@@ -48,23 +48,27 @@ Kubernetes Worker
 #### 環境準備  
 
 環境更新及安裝基本套件  
-安裝Docker  
 ```
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get -y install vim build-essential curl ssh
-
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-
 ```
 
-安裝Docker engine    
+安裝Docker engine  
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-確認安裝版本
+確認安裝版本  
 ```
 sudo docker --version
+```
+
+安裝kubernetes  
+```
+#安裝kubernetes(在每一台機器上)
+```
+設定Kubernetes  
+```
+kubeadm init  --pod-network-cidr=10.244.0.0/16  
 ```
