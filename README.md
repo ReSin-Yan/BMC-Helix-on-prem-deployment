@@ -48,13 +48,13 @@ Kubernetes Worker
 #### 環境準備  
 
 環境更新及安裝基本套件  
+安裝Docker  
 ```
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get -y install vim build-essential curl ssh
-sudo apt-get install net-tools default-jdk git
 
-mkdir jenkins
-sudo chmod +777 jenkins/
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 
 ```
 
