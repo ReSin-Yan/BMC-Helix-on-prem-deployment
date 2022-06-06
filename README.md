@@ -83,3 +83,19 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 #參數請由Master產生的資訊貼上(最前面加sudo)  
 sudo kubeadm join 192.168.0.181:6443 --token dlkmv8.iyfymnzohzqwwsp9 --discovery-token-ca-cert-hash sha256:e97eca0ba0bf19c1c3942b53314ad492c2fa57fbf109492f49fed12d4fcc5641
 ```
+設定podNetwork，選擇使用calico  
+```
+curl https://docs.projectcalico.org/manifests/calico.yaml -O
+kubectl apply -f calico.yaml
+
+#輸入指令確認服務是否存在 
+kubectl get pod -A  
+```  
+設定Loadbalance  
+```  
+git clone https://github.com/ReSin-Yan/kuberenetes-base.git
+cd kuberenetes-base/k8stools/service/loadbalancetools/  
+sh installMetallb.sh [IPRange] [IPRange]
+```  
+設定ingress  
+設定StorageClass  
