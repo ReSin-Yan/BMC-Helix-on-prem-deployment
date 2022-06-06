@@ -64,11 +64,22 @@ sh get-docker.sh
 sudo docker --version
 ```
 
-安裝kubernetes  
+安裝kubernetes(在每一台機器上)  
 ```
 #安裝kubernetes(在每一台機器上)
 ```
-設定Kubernetes  
+設定Kubernetes(在Master機器上)  
 ```
 sudo kubeadm init  --pod-network-cidr=10.244.0.0/16  
+```
+安裝完成之後(在Master機器上)  
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+設定加入叢集(在5台Worker機器上)  
+```
+#參數請由Master產生的資訊貼上(最前面加sudo)  
+sudo kubeadm join 192.168.0.181:6443 --token dlkmv8.iyfymnzohzqwwsp9 --discovery-token-ca-cert-hash sha256:e97eca0ba0bf19c1c3942b53314ad492c2fa57fbf109492f49fed12d4fcc5641
 ```
