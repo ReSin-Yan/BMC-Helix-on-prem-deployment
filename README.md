@@ -51,7 +51,7 @@ Kubernetes Worker
 環境更新及安裝基本套件  
 ```
 sudo apt-get update && sudo apt-get -y upgrade
-sudo apt-get -y install vim build-essential curl ssh
+sudo apt-get -y install vim build-essential curl ssh nfs-kernel-server nfs-common
 ```
 
 安裝Docker engine  
