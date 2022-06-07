@@ -58,6 +58,17 @@ sudo apt-get -y install vim build-essential curl ssh nfs-kernel-server nfs-commo
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
+設定vm.max_map_count  
+```
+sudo vim /etc/sysctl.conf
+
+
+##加入以下參數
+vm.max_map_count=655360  
+
+
+sudo sysctl -p  
+```
 
 確認安裝版本  
 ```
