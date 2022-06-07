@@ -51,9 +51,8 @@ Kubernetes Worker
 環境更新及安裝基本套件  
 ```
 sudo apt-get update && sudo apt-get -y upgrade
-sudo apt-get -y install vim build-essential curl ssh nfs-kernel-server nfs-common
+sudo apt-get -y install vim build-essential curl ssh nfs-kernel-server nfs-common  
 ```
-
 安裝Docker engine  
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -69,8 +68,12 @@ sudo docker --version
 ```
 #安裝kubernetes(在每一台機器上)
 ```
-設定Kubernetes(在Master機器上)  
+安裝helm和設定Kubernetes(在Master機器上)  
 ```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
 sudo kubeadm init  --pod-network-cidr=10.244.0.0/16  
 ```
 安裝完成之後(在Master機器上)  
