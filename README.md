@@ -102,6 +102,21 @@ cd kuberenetes-base/k8stools/service/loadbalancetools/
 sh installMetallb.sh [IPRange] [IPRange]
 ```  
 設定ingress  
+請使用本專案的cert.pem.cert跟 privkey.pem.key  
+```  
+kubectl create secret tls my-tls-secret --cert=/home/ubuntu/bmcnew/cert.pem.cert --key=/home/ubuntu/bmcnew/privkey.pem.key -n default
+```  
+下載nginx-controller 0.32.0 (yaml可以從BMC官網下載，但是必須修改參數)  
+```  
+wget https://docs.bmc.com/docs/HelixOperationsManagementDeploy/files/1023054073/1023064313/1/1627990144702/ingress.yaml  
+```  
+修改其中的args  
+圖片 
+繼續部屬  
+```  
+kubectl create ns internet-ingress  
+kubectl create -f ingress.yaml  
+```  
 設定StorageClass(根據準備好的NFS server)  
 ```  
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
