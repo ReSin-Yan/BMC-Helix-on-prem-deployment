@@ -122,3 +122,10 @@ kubectl create -f ingress.yaml
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=192.168.0.186 --set nfs.path=/mnt/nfsshare
 ```  
+
+將ingress的80 port 修改至haproxy  
+同時重啟coreDNS  
+```  
+ubectl rollout restart -n kube-system deployment/coredns
+```  
+
