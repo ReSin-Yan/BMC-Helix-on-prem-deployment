@@ -13,6 +13,8 @@ BMC-Helix-on-prem使用了Kubernetes的安裝方式
 | Haproxy | 
 | DeoloymentEngine  | 
 | NFS  | 
+| DNS  | 
+| SMTP  | 
 
 ## Kubernetes      
 
