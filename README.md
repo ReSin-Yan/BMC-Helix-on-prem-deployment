@@ -12,6 +12,7 @@ BMC-Helix-on-prem使用了Kubernetes的安裝方式
 | Kubernetes Worker * 5 | 
 | Haproxy | 
 | DeoloymentEngine  | 
+| NFS  | 
 
 ## Kubernetes      
 
@@ -31,7 +32,7 @@ Kubernetes Worker
  | 配置 | 版本or建議規格 | 
 |-------|-------|
 | OS | ubutu desktop 20.04 |
-| CPU |  8 CPU |
+| CPU |  16 CPU |
 | Memory  | 644 GB+ |
 | Disk  | 200 GB+ |  
 
