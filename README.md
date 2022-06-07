@@ -126,6 +126,7 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 將ingress的80 port 修改至haproxy  
 同時重啟coreDNS  
 ```  
-ubectl rollout restart -n kube-system deployment/coredns
+ubectl rollout restart -n kube-system deployment/coredns  
+kubectl create ns gldb-ade-ns2  
 ```  
 
